@@ -66,7 +66,7 @@ call plug#end()
     set tm=500
     
     " Properly disable sound on errors on MacVim
-    if has("gui_macvim")
+    if has('autocmd')
         autocmd GUIEnter * set vb t_vb=
     endif
 
