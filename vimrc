@@ -59,12 +59,19 @@ call plug#end()
     set laststatus=2        " always display status bar
 
 
+    " No annoying sound on errors
+    set noerrorbells
+    set novisualbell
+    set t_vb=
+    set tm=500
+    
+    " Properly disable sound on errors on MacVim
+    if has("gui_macvim")
+        autocmd GUIEnter * set vb t_vb=
+    endif
 
 
-    set noerrorbells visualbell t_vb=   " disable bip on errors and dont flash screen
-        if has('autocmd')
-          autocmd GUIEnter * set visualbell t_vb=
-        endif
+
 
 " netrw {{{
     let g:netrw_browse_split = 4
