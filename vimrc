@@ -8,9 +8,13 @@
 call plug#begin('~/.vim/plugged')
 Plug 'lervag/vimtex'
 
+"superTab
+Plug 'ervandew/supertab'
+
 " snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
 
 " Initialize plugin system
 call plug#end()
@@ -46,6 +50,9 @@ call plug#end()
 
     set backspace=indent,eol,start "allow backspacing over indentation linebreaks and insertion start.
 
+    
+    set linebreak "wrap lines at convenient points
+    
     set wildmenu            " visual autocomplete for command menu
 
     set lazyredraw          " redraw only when we need to.
@@ -69,7 +76,6 @@ call plug#end()
     if has('autocmd')
         autocmd GUIEnter * set vb t_vb=
     endif
-
 
 
 
@@ -135,14 +141,19 @@ call plug#end()
 
 
 " CtrlP settings
-    let g:ctrlp_match_window = 'bottom,order:ttb'
-    let g:ctrlp_switch_buffer = 0
-    let g:ctrlp_working_path_mode = 0
-    let g:ctrlp_user_command = 'find %s -type f'
+    " let g:ctrlp_match_window = 'bottom,order:ttb'
+    " let g:ctrlp_switch_buffer = 0
+    " let g:ctrlp_working_path_mode = 0
+    " let g:ctrlp_user_command = 'find %s -type f'
     
 " Latex
 
 let g:tex_flavor = 'latex'
+let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '-r @line @pdf @tex'
+let g:vimtex_view_general_options_latexmk = '-r 1'
+" let g:vimtex_view_method = skim
+" let g:vimtex_view_automatic = 1 " prevent `latexmk` (or other build tools) from starting Skim 
 
 " Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
