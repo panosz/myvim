@@ -15,6 +15,22 @@ Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+" Buffer bye
+" Bbye allows you to do delete buffers (close files) without closing your windows or messing up your layout.
+Plug 'moll/vim-bbye'
+
+" Goyo - better control of window size
+Plug 'junegunn/goyo.vim'
+
+" Nerd Commenter
+Plug 'scrooloose/nerdcommenter'
+
+    " Add spaces after comment delimiters by default
+    let g:NERDSpaceDelims = 1
+    " Enable NERDCommenterToggle to check all selected lines is commented or not 
+    let g:NERDToggleCheckAllLines = 1
+
+
 
 " Initialize plugin system
 call plug#end()
@@ -46,12 +62,14 @@ call plug#end()
     set ruler               " always show cursor position
 
     filetype indent on      " load filetype-specific indent files
+    set shiftwidth=2        " when indenting with '>' use two spaces width
     syntax on
+    set omnifunc=syntaxcomplete#Complete
 
     set backspace=indent,eol,start "allow backspacing over indentation linebreaks and insertion start.
 
-    
-    set linebreak "wrap lines at convenient points
+    set wrap       
+    set linebreak           " wrap lines at convenient points
     
     set wildmenu            " visual autocomplete for command menu
 
@@ -65,6 +83,8 @@ call plug#end()
 
     set laststatus=2        " always display status bar
 
+    set mouse=a             " enable mouse for scrolling and resizing
+
 
     " No annoying sound on errors
     set noerrorbells
@@ -77,6 +97,8 @@ call plug#end()
         autocmd GUIEnter * set vb t_vb=
     endif
 
+    " close buffer without closing window
+    nnoremap <Leader>q :Bdelete<CR>
 
 
 " netrw {{{
@@ -99,6 +121,8 @@ call plug#end()
 
 " Searching
     set incsearch           " search as characters are entered
+    set ignorecase          " ignore case when searching..           
+    set smartcase           " unless you type a capital
     set hlsearch            " highlight matches
     " turn off search highlight
     nnoremap <leader><space> :nohlsearch<CR>
@@ -134,17 +158,10 @@ call plug#end()
 
     "change windows effectively
     nnoremap <C-H> <C-W><C-H>
-    nnoremap <C-J> <C-W><C-J>
+    "nnoremap <C-J> <C-W><C-J>
     nnoremap <C-K> <C-W><C-K>
     nnoremap <C-L> <C-W><C-L>
 
-
-
-" CtrlP settings
-    " let g:ctrlp_match_window = 'bottom,order:ttb'
-    " let g:ctrlp_switch_buffer = 0
-    " let g:ctrlp_working_path_mode = 0
-    " let g:ctrlp_user_command = 'find %s -type f'
     
 " Latex
 
@@ -154,6 +171,7 @@ let g:vimtex_view_general_options = '-r @line @pdf @tex'
 let g:vimtex_view_general_options_latexmk = '-r 1'
 " let g:vimtex_view_method = skim
 " let g:vimtex_view_automatic = 1 " prevent `latexmk` (or other build tools) from starting Skim 
+let g:vimtex_complete_bib_simple = 1
 
 " Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -163,4 +181,5 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
 
