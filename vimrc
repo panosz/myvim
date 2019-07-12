@@ -6,24 +6,25 @@
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
-Plug 'lervag/vimtex'
+" ---- vimtex   ----
+    Plug 'lervag/vimtex'
 
-"superTab
-Plug 'ervandew/supertab'
+" ----  superTab ----
+    Plug 'ervandew/supertab'
 
-" snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" ----   snippets ----
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
 
-" Buffer bye
+" ----   Buffer bye ----
 " Bbye allows you to do delete buffers (close files) without closing your windows or messing up your layout.
-Plug 'moll/vim-bbye'
+    Plug 'moll/vim-bbye'
 
-" Goyo - better control of window size
-Plug 'junegunn/goyo.vim'
+" ----   Goyo - better control of window size ----
+    Plug 'junegunn/goyo.vim'
 
-" Nerd Commenter
-Plug 'scrooloose/nerdcommenter'
+" ----   Nerd Commenter -----
+    Plug 'scrooloose/nerdcommenter'
 
     " Add spaces after comment delimiters by default
     let g:NERDSpaceDelims = 1
@@ -31,6 +32,12 @@ Plug 'scrooloose/nerdcommenter'
     let g:NERDToggleCheckAllLines = 1
 
 
+" ----   Mundo - visualize undo tree   ----
+    Plug 'simnalamburt/vim-mundo'
+    nnoremap <F5> :MundoToggle<CR>
+
+" ---- Vim-Unimpared - useful mappings ---
+    Plug 'tpope/vim-unimpaired' 
 
 " Initialize plugin system
 call plug#end()
@@ -103,7 +110,7 @@ call plug#end()
 
 " netrw {{{
     let g:netrw_browse_split = 4
-    let g:netrw_winsize = 20
+    let g:netrw_winsize = 25
 
 " }}}
 
@@ -150,6 +157,7 @@ call plug#end()
 
     "copy and paste
     vmap <Leader>y "+y
+    vmap <Leader>Y "+Y
     vmap <Leader>d "+d
     nmap <Leader>p "+p
     nmap <Leader>P "+P
@@ -158,11 +166,62 @@ call plug#end()
 
     "change windows effectively
     nnoremap <C-H> <C-W><C-H>
-    "nnoremap <C-J> <C-W><C-J>
+    nnoremap <C-J> <C-W><C-J>
     nnoremap <C-K> <C-W><C-K>
     nnoremap <C-L> <C-W><C-L>
 
-    
+    " buffer navigation
+    nnoremap <Leader>bn :bn<CR> " go to next buffer
+    nnoremap <Leader>bp :bp<CR> " go to previous buffer
+
+    " search and replace under cursor
+    nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+    " make it easy to use vim when typing greek
+
+    map α a
+    map σ s
+    map δ d
+    map φ f
+    map γ g
+    map η h
+    map ξ j
+    map κ k
+    map λ l
+    map ς w
+    map ρ r
+    map τ t
+    map υ y
+    map θ u
+    map ι i
+    map ο o
+    map π p
+    map χ x
+    map ψ c
+    map β b
+    map ν n
+        
+    map Α A
+    map Σ S
+    map Δ D
+    map Φ F
+    map Γ G
+    map Η H
+    map Ξ J
+    map Κ K
+    map Λ L
+  " map Σ W
+    map Ρ R
+    map Τ T
+    map Υ Y
+    map Ι I
+    map Ο O
+    map Π P
+    map Χ X
+    map Ψ C
+    map Β B
+    map Ν N
+        
 " Latex
 
 let g:tex_flavor = 'latex'
