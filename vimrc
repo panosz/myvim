@@ -52,6 +52,17 @@ call plug#begin('~/.vim/plugged')
 " ---- Vim-Unimpared - useful mappings ---
     Plug 'tpope/vim-unimpaired' 
 
+" ---- vim-syntastic -  Martin Grenfell's syntax checker --------
+    Plug 'vim-syntastic/syntastic'
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 1
+"
 " Initialize plugin system
 call plug#end()
 
