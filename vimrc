@@ -92,6 +92,9 @@ call plug#end()
 
     set mouse=a             " enable mouse for scrolling and resizing
 
+    set autochdir           "change the current working directory whenever you open a file, switch buffers, delete a buffer or open/close a window.
+
+
 
     " No annoying sound on errors
     set noerrorbells
@@ -170,6 +173,11 @@ call plug#end()
     nnoremap <C-K> <C-W><C-K>
     nnoremap <C-L> <C-W><C-L>
 
+    tnoremap <C-H> <C-W><C-H>
+    tnoremap <C-J> <C-W><C-J>
+    tnoremap <C-K> <C-W><C-K>
+    tnoremap <C-L> <C-W><C-L>
+
     " buffer navigation
     nnoremap <Leader>bn :bn<CR> " go to next buffer
     nnoremap <Leader>bp :bp<CR> " go to previous buffer
@@ -177,8 +185,10 @@ call plug#end()
     " search and replace under cursor
     nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 
-    " make it easy to use vim when typing greek
+    " open terminal in vertical split
+    nnoremap <Leader>t :vert term<CR>
 
+    " make it easy to use vim when typing greek
     map α a
     map σ s
     map δ d
