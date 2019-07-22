@@ -276,3 +276,5 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 
+" Remove trailing white space, when coding
+autocmd FileType c,cpp,python autocmd BufWritePre <buffer> %s/\s\+$//e
