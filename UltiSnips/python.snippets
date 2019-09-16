@@ -1,0 +1,10 @@
+extends python
+
+snippet subplot "subplot"
+fig, ax = plt.subplots()
+endsnippet
+
+snippet axlabel "set axis labels"
+$1.set_xlabel($2)
+$1.set_ylabel($3)
+endsnippet
