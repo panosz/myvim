@@ -25,7 +25,7 @@ call plug#begin('~/.vim/plugged')
     let g:SuperTabDefaultCompletionType = '<C-n>'
 
     " better key bindings for UltiSnipsExpandTrigger
-    let g:UltiSnipsExpandTrigger = "<tab>"
+    let g:UltiSnipsExpandTrigger = "<c-tab>"
     let g:UltiSnipsJumpForwardTrigger="<c-b>"
     let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
