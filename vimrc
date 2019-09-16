@@ -62,6 +62,13 @@ call plug#begin('~/.vim/plugged')
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 1
+
+" ---- skywind3000/asyncrun.vim - Run Async Shell Commands in Vim 8.0 and Output to Quickfix Window ----
+    Plug 'skywind3000/asyncrun.vim'
+
+
+" ---- vim-cmake - make working with CMake a little nicer -------     
+    Plug 'vhdirk/vim-cmake'
 "
 " Initialize plugin system
 call plug#end()
@@ -172,7 +179,7 @@ call plug#end()
 
 "Leader Shortcuts
     
-    " leader is comma
+    " local leader is comma
      let mapleader="\<Space>"       
      let maplocalleader = ","
     
@@ -212,7 +219,11 @@ call plug#end()
     " open terminal in vertical split
     nnoremap <Leader>t :vert term<CR>
 
-    " make it easy to use vim when typing greek
+    " tags
+    set tags=tags; " look for tags recursively in parent directories, (due to ';')
+
+
+    " make it easy to use vim when typing greek {{{
     map α a
     map σ s
     map δ d
@@ -255,9 +266,9 @@ call plug#end()
     map Ψ C
     map Β B
     map Ν N
+    "}}}
         
 " Latex
-
 let g:tex_flavor = 'latex'
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
