@@ -195,13 +195,13 @@ call plug#end()
     nnoremap <Leader>w :w<CR> " Save file
 
     "copy and paste
-    vmap <Leader>y "+y
-    vmap <Leader>Y "+Y
-    vmap <Leader>d "+d
-    nmap <Leader>p "+p
-    nmap <Leader>P "+P
-    vmap <Leader>p "+p
-    vmap <Leader>P "+P
+    noremap <Leader>y "+y
+    noremap <Leader>Y "+Y
+    noremap <Leader>d "+d
+    noremap <Leader>p "+p
+    noremap <Leader>P "+P
+    noremap <Leader>p "+p
+    noremap <Leader>P "+P
 
     "change windows effectively
     nnoremap <C-H> <C-W><C-H>
