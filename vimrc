@@ -273,6 +273,8 @@ call plug#end()
     map Ν N
     "}}}
         
+" ycm GoTo
+    nnoremap gd :YcmCompleter GoTo<CR>
 " Latex
 let g:tex_flavor = 'latex'
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
