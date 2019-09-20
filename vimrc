@@ -71,6 +71,10 @@ call plug#begin('~/.vim/plugged')
 " ---- vim-cmake - make working with CMake a little nicer -------     
     Plug 'vhdirk/vim-cmake'
 "
+" ---- fugitive.vim - A Git wrapper ----
+    Plug 'tpope/vim-fugitive'
+"
+"
 " Initialize plugin system
 call plug#end()
 
