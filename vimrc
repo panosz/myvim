@@ -192,7 +192,8 @@ call plug#end()
     inoremap jk <esc>
 
 "Mappings
-    nnoremap <Leader>w :w<CR> " Save file
+    nnoremap <Leader>w :w<CR>| " Save file
+    nnoremap <Leader>{ o{<esc>o}<esc>O| " Insert c style curly bracket block
 
     "copy and paste
     noremap <Leader>y "+y
@@ -215,8 +216,8 @@ call plug#end()
     tnoremap <C-L> <C-W><C-L>
 
     " buffer navigation
-    nnoremap <Leader>bn :bn<CR> " go to next buffer
-    nnoremap <Leader>bp :bp<CR> " go to previous buffer
+    nnoremap <Leader>bn :bn<CR>| " go to next buffer
+    nnoremap <Leader>bp :bp<CR>| " go to previous buffer
 
     " search and replace under cursor
     nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
