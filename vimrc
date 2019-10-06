@@ -29,6 +29,8 @@ call plug#begin('~/.vim/plugged')
     let g:UltiSnipsExpandTrigger = "<c-tab>"
     let g:UltiSnipsJumpForwardTrigger="<c-b>"
     let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+    " use numpy style docstrings
+    let g:ultisnips_python_style="numpy"
 
 " ----   Buffer bye ----
 " Bbye allows you to do delete buffers (close files) without closing your windows or messing up your layout.
