@@ -31,6 +31,8 @@ call plug#begin('~/.vim/plugged')
     let g:UltiSnipsJumpBackwardTrigger="<c-z>"
     " use numpy style docstrings
     let g:ultisnips_python_style="numpy"
+    " If you want :UltiSnipsEdit to split your window.
+    let g:UltiSnipsEditSplit="vertical"
 
 " ----   Buffer bye ----
 " Bbye allows you to do delete buffers (close files) without closing your windows or messing up your layout.
@@ -287,14 +289,7 @@ let g:vimtex_view_general_options_latexmk = '-r 1'
 " let g:vimtex_view_automatic = 1 " prevent `latexmk` (or other build tools) from starting Skim 
 let g:vimtex_complete_bib_simple = 1
 
-" Snippets
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
 
 " Remove trailing white space, when coding
