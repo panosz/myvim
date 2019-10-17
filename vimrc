@@ -79,6 +79,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
 "
 "
+" ---- surround.vim: quoting/parenthesizing made simple ----
+    Plug 'tpope/vim-surround'
+"
 " Initialize plugin system
 call plug#end()
 
