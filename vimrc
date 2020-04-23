@@ -82,6 +82,10 @@ call plug#begin('~/.vim/plugged')
 " ---- surround.vim: quoting/parenthesizing made simple ----
     Plug 'tpope/vim-surround'
 "
+" ---- Active fork of kien/ctrlp.vim—Fuzzy file, buffer etc finder ----
+    Plug 'ctrlpvim/ctrlp.vim'
+
+"
 " Initialize plugin system
 call plug#end()
 
