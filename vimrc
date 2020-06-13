@@ -259,7 +259,8 @@ let g:vimtex_view_general_options_latexmk = '-r 1'
 let g:vimtex_complete_bib_simple = 1
 
 
-
+" GtrlP
+    nnoremap <Leader>. :CtrlPTag<CR>
 
 " Remove trailing white space, when coding
 autocmd FileType c,cpp,python autocmd BufWritePre <buffer> %s/\s\+$//e
