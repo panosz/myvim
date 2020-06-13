@@ -71,20 +71,20 @@ call plug#begin('~/.vim/plugged')
 " ---- skywind3000/asyncrun.vim - Run Async Shell Commands in Vim 8.0 and Output to Quickfix Window ----
     Plug 'skywind3000/asyncrun.vim'
 
-
 " ---- vim-cmake - make working with CMake a little nicer -------     
     Plug 'vhdirk/vim-cmake'
-"
+
 " ---- fugitive.vim - A Git wrapper ----
     Plug 'tpope/vim-fugitive'
-"
-"
+
 " ---- surround.vim: quoting/parenthesizing made simple ----
     Plug 'tpope/vim-surround'
-"
+
 " ---- Active fork of kien/ctrlp.vim—Fuzzy file, buffer etc finder ----
     Plug 'ctrlpvim/ctrlp.vim'
 
+" ---- eunuch.vim: Helpers for UNIX shell commands ----
+    Plug 'tpope/vim-eunuch'
 "
 " Initialize plugin system
 call plug#end()
@@ -241,49 +241,11 @@ call plug#end()
 
 
     " make it easy to use vim when typing greek {{{
-    map α a
-    map σ s
-    map δ d
-    map φ f
-    map γ g
-    map η h
-    map ξ j
-    map κ k
-    map λ l
-    map ς w
-    map ρ r
-    map τ t
-    map υ y
-    map θ u
-    map ι i
-    map ο o
-    map π p
-    map χ x
-    map ψ c
-    map β b
-    map ν n
-        
-    map Α A
-    map Σ S
-    map Δ D
-    map Φ F
-    map Γ G
-    map Η H
-    map Ξ J
-    map Κ K
-    map Λ L
-  " map Σ W
-    map Ρ R
-    map Τ T
-    map Υ Y
-    map Ι I
-    map Ο O
-    map Π P
-    map Χ X
-    map Ψ C
-    map Β B
-    map Ν N
+	 set langmap=ΑA,ΒB,ΨC,ΔD,ΕE,ΦF,ΓG,ΗH,ΙI,ΞJ,ΚK,ΛL,ΜM,ΝN,ΟO,ΠP,QQ,ΡR,ΣS,ΤT,ΘU,ΩV,WW,ΧX,ΥY,ΖZ,αa,βb,ψc,δd,εe,φf,γg,ηh,ιi,ξj,κk,λl,μm,νn,οo,πp,qq,ρr,σs,τt,θu,ωv,ςw,χx,υy,ζz
+     inoremap ξκ <esc>
     "}}}
+
+
         
 " ycm GoTo
     nnoremap gd :YcmCompleter GoTo<CR>
