@@ -141,6 +141,12 @@ call plug#end()
 
     set autochdir           "change the current working directory whenever you open a file, switch buffers, delete a buffer or open/close a window.
 
+    if !&scrolloff
+      set scrolloff=1       " Minimal number of screen lines to keep above and below the cursor.
+    endif
+    if !&sidescrolloff
+      set sidescrolloff=5   " The minimal number of screen columns to keep to the left and to the right of the cursor if 'nowrap' is set.  
+    endif
 
 
     " No annoying sound on errors
