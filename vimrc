@@ -148,6 +148,10 @@ call plug#end()
       set sidescrolloff=5   " The minimal number of screen columns to keep to the left and to the right of the cursor if 'nowrap' is set.  
     endif
 
+    if &history < 1000
+      set history=1000      " Determine number of entries of ":" commands and previous search patterns that is remembered.
+	
+    endif
 
     " No annoying sound on errors
     set noerrorbells
