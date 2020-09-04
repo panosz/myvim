@@ -88,6 +88,9 @@ call plug#begin('~/.vim/plugged')
 
 " ---- repeat.vim: Repeat plugin maps using the `.` command ----
     Plug 'tpope/vim-repeat'
+
+" ---- tabular.vim: Text aligning tools ----
+    Plug 'godlygeek/tabular'
 "
 " Initialize plugin system
 call plug#end()
