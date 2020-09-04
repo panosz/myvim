@@ -85,6 +85,9 @@ call plug#begin('~/.vim/plugged')
 
 " ---- eunuch.vim: Helpers for UNIX shell commands ----
     Plug 'tpope/vim-eunuch'
+
+" ---- repeat.vim: Repeat plugin maps using the `.` command ----
+    Plug 'tpope/vim-repeat'
 "
 " Initialize plugin system
 call plug#end()
