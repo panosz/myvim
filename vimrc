@@ -94,6 +94,9 @@ call plug#begin('~/.vim/plugged')
 "
 " ---- vim-airline: Lean & mean status/tabline for vim. ----
     Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    let g:airline_theme='base16_ashes'
+
 "
 " ---- Tagbar: a class outline viewer for vim.----
     Plug 'preservim/tagbar'
