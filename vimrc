@@ -96,10 +96,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     let g:airline_theme='base16_ashes'
-
 "
 " ---- Tagbar: a class outline viewer for vim.----
     Plug 'preservim/tagbar'
+"
+" ---- vim-rainbow: Rainbow Parentheses.----
+    Plug 'frazrepo/vim-rainbow'
+    " enable globally
+    let g:rainbow_active = 1
 " Initialize plugin system
 call plug#end()
 
