@@ -266,6 +266,8 @@ call plug#end()
      inoremap ξκ <esc>
     "}}}
 
+    " split vertically existing buffer.
+    nnoremap <Leader>v :vert sb 
 
         
 " ycm GoTo
