@@ -95,6 +95,8 @@ call plug#begin('~/.vim/plugged')
 " ---- vim-airline: Lean & mean status/tabline for vim. ----
     Plug 'vim-airline/vim-airline'
 "
+" ---- Tagbar: a class outline viewer for vim.----
+    Plug 'preservim/tagbar'
 " Initialize plugin system
 call plug#end()
 
