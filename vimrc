@@ -92,6 +92,9 @@ call plug#begin('~/.vim/plugged')
 " ---- tabular.vim: Text aligning tools ----
     Plug 'godlygeek/tabular'
 "
+" ---- vim-airline: Lean & mean status/tabline for vim. ----
+    Plug 'vim-airline/vim-airline'
+"
 " Initialize plugin system
 call plug#end()
 
