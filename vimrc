@@ -273,8 +273,14 @@ call plug#end()
     nnoremap <Leader>v :vert sb 
 
         
-" ycm GoTo
+    " ycm GoTo
     nnoremap gd :YcmCompleter GoTo<CR>
+
+
+    " GtrlP
+    nnoremap <Leader>. :CtrlPTag<CR>
+
+
 " Latex
 let g:tex_flavor = 'latex'
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
@@ -283,10 +289,6 @@ let g:vimtex_view_general_options_latexmk = '-r 1'
 " let g:vimtex_view_method = skim
 " let g:vimtex_view_automatic = 1 " prevent `latexmk` (or other build tools) from starting Skim 
 let g:vimtex_complete_bib_simple = 1
-
-
-" GtrlP
-    nnoremap <Leader>. :CtrlPTag<CR>
 
 " Remove trailing white space, when coding
 autocmd FileType c,cpp,python autocmd BufWritePre <buffer> %s/\s\+$//e
