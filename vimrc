@@ -280,6 +280,8 @@ call plug#end()
     " GtrlP
     nnoremap <Leader>. :CtrlPTag<CR>
 
+    " Tagbar
+    nnoremap <F8> :TagbarToggle<CR>
 
 " Latex
 let g:tex_flavor = 'latex'
