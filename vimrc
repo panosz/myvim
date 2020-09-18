@@ -1,5 +1,3 @@
-
-
 "vim-plug
 
 " Specify a directory for plugins
@@ -108,6 +106,10 @@ call plug#begin('~/.vim/plugged')
 " 
 " ---- vim-colors-solarized: Solarized Colorscheme for Vim ----
     Plug 'altercation/vim-colors-solarized'
+
+" 
+" ---- Auto Pairs: Insert or delete brackets, parens, quotes in pair. ----
+    Plug 'jiangmiao/auto-pairs'
 
 " Initialize plugin system
 call plug#end()
