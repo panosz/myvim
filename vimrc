@@ -104,6 +104,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'frazrepo/vim-rainbow'
     " enable globally
     let g:rainbow_active = 1
+
+" 
+" ---- vim-colors-solarized: Solarized Colorscheme for Vim ----
+    Plug 'altercation/vim-colors-solarized'
+
 " Initialize plugin system
 call plug#end()
 
