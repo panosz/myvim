@@ -106,10 +106,12 @@ call plug#begin('~/.vim/plugged')
 " 
 " ---- vim-colors-solarized: Solarized Colorscheme for Vim ----
     Plug 'altercation/vim-colors-solarized'
-
 " 
 " ---- Auto Pairs: Insert or delete brackets, parens, quotes in pair. ----
     Plug 'jiangmiao/auto-pairs'
+"
+" ---- A nicer Python indentation style for vim. ----
+    Plug 'Vimjas/vim-python-pep8-indent'
 
 " Initialize plugin system
 call plug#end()
