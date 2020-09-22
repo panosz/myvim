@@ -112,7 +112,10 @@ call plug#begin('~/.vim/plugged')
 "
 " ---- A nicer Python indentation style for vim. ----
     Plug 'Vimjas/vim-python-pep8-indent'
-
+"
+" ---- A Vim plugin which shows a git diff in the sign column. ----
+    Plug 'airblade/vim-gitgutter' 
+"
 " Initialize plugin system
 call plug#end()
 
@@ -132,6 +135,9 @@ call plug#end()
 " Swap and Backup files 
     set directory=$HOME/.vim/swp//  " keep swap files in .vim/swp appending the file absolute directory    
     set nobackup            " disable backup
+
+" Update time
+    set updatetime=100      " Wait time in ms for various operations. Also used by gitgutter.
 
 " UI Config
     set number              " show line numbers
