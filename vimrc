@@ -121,6 +121,9 @@ call plug#begin('~/.vim/plugged')
 " ---- Gitgutter A Vim plugin which shows a git diff in the sign column. ----{{{
     Plug 'airblade/vim-gitgutter' 
     " }}}
+" ---  Markdown Preview for (Neo)vim  {{{ "
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    " }}} "
 "
 " Initialize plugin system
 call plug#end()
