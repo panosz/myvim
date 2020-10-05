@@ -4,16 +4,19 @@
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
-" ----   vimtex   ---- {{{
+    " ---- vimtex {{{
     Plug 'lervag/vimtex'
-" }}}
-" ----   superTab ---- {{{
+    " }}}
+
+    " ---- superTab {{{
     Plug 'ervandew/supertab'
-" }}}
-" ----   YouCompleteMe -A code-completion engine for Vim--- {{{
+    " }}}
+
+    " ---- YouCompleteMe - A code-completion engine for Vim {{{
     Plug 'ycm-core/YouCompleteMe'
-" }}}
-" ----   snippets ---- {{{
+    " }}}
+
+    " ---- snippets {{{
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     " make YCM compatible with UltiSnips (using supertab)
@@ -22,7 +25,6 @@ call plug#begin('~/.vim/plugged')
     let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
     let g:SuperTabDefaultCompletionType = '<C-n>'
     let g:ycm_collect_identifiers_from_tags_files = 1 " read tag files
-
     " better key bindings for UltiSnipsExpandTrigger
     let g:UltiSnipsExpandTrigger = "<c-tab>"
     let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -31,32 +33,34 @@ call plug#begin('~/.vim/plugged')
     let g:ultisnips_python_style="numpy"
     " If you want :UltiSnipsEdit to split your window.
     let g:UltiSnipsEditSplit="vertical"
-" }}}
-" ----   Buffer bye ---- {{{
-" Bbye allows you to do delete buffers (close files) without closing your windows or messing up your layout.
+    " }}}
+
+    " ---- Buffer bye - delete buffers without closing windows {{{
     Plug 'moll/vim-bbye'
-" }}}
-" ----   Goyo - better control of window size ----{{{
+    " }}}
+
+    " ---- Goyo - better control of window size {{{
     Plug 'junegunn/goyo.vim'
     " }}}
-" ----   Nerd Commenter -----{{{
-    Plug 'scrooloose/nerdcommenter'
 
+    " ---- Nerd Commenter {{{
+    Plug 'scrooloose/nerdcommenter'
     " Add spaces after comment delimiters by default
     let g:NERDSpaceDelims = 1
     " Enable NERDCommenterToggle to check all selected lines is commented or not 
     let g:NERDToggleCheckAllLines = 1
     " }}}
 
-" ----   Mundo - visualize undo tree   ---- {{{
+    " ---- Mundo - visualize undo tree {{{
     Plug 'simnalamburt/vim-mundo'
     nnoremap <F5> :MundoToggle<CR>
     " }}}
 
-    " ----   Vim-Unimpared - useful mappings --- {{{
+    " ---- Vim-Unimpared - useful mappings {{{
     Plug 'tpope/vim-unimpaired' 
     " }}}
-    " ----   vim-syntastic -  Martin Grenfell's syntax checker --------{{{
+
+    " ---- vim-syntastic -  Martin Grenfell's syntax checker {{{
     Plug 'vim-syntastic/syntastic'
     " set statusline+=%#warningmsg#
     " set statusline+=%{SyntasticStatuslineFlag()}
@@ -67,64 +71,76 @@ call plug#begin('~/.vim/plugged')
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 1
     " }}}
-    " ----   skywind3000/asyncrun.vim - Run Async Shell Commands in Vim 8.0 and Output to Quickfix Window ---- {{{
+
+    " ---- skywind3000/asyncrun.vim - run async shell commands in vim {{{
     Plug 'skywind3000/asyncrun.vim'
     " }}}
-    " ----   vim-cmake - make working with CMake a little nicer -------     {{{
+
+    " ---- vim-cmake - make working with CMake a little nicer {{{
     Plug 'vhdirk/vim-cmake'
     " }}}
-    " ---- fugitive.vim - A Git wrapper ----{{{
+
+    " ---- fugitive.vim - A Git wrapper {{{
     Plug 'tpope/vim-fugitive'
     " }}}
-    " ---- surround.vim: quoting/parenthesizing made simple ----{{{
+
+    " ---- surround.vim: quoting/parenthesizing made simple {{{
     Plug 'tpope/vim-surround'
     " }}}
+
     " ---- Active fork of kien/ctrlp.vim—Fuzzy file, buffer etc finder {{{
     Plug 'ctrlpvim/ctrlp.vim'
     " }}}
-    " ---- eunuch.vim: Helpers for UNIX shell commands ----{{{
+
+    " ---- eunuch.vim: Helpers for UNIX shell commands {{{
     Plug 'tpope/vim-eunuch'
     " }}}
-    " ---- repeat.vim: Repeat plugin maps using the `.` command ----{{{
+
+    " ---- repeat.vim: Repeat plugin maps using the `.` command {{{
     Plug 'tpope/vim-repeat'
     " }}}
-    " ---- tabular.vim: Text aligning tools ----{{{
+
+    " ---- tabular.vim: Text aligning tools {{{
     Plug 'godlygeek/tabular'
     " }}}"
-    " ---- vim-airline: Lean & mean status/tabline for vim. ----{{{
+
+    " ---- vim-airline: Lean & mean status/tabline for vim {{{
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     let g:airline_theme='base16_ashes'
     " }}}
-    " ---- Tagbar: a class outline viewer for vim.----{{{
+
+    " ---- Tagbar: a class outline viewer for vim {{{
     Plug 'preservim/tagbar'
     " }}}
-"
-" ---- vim-rainbow: Rainbow Parentheses.----{{{
+
+    " ---- vim-rainbow: Rainbow Parentheses {{{
     Plug 'frazrepo/vim-rainbow'
     " enable globally
     let g:rainbow_active = 1
     " }}}
-" 
-" ---- vim-colors-solarized: Solarized Colorscheme for Vim ----{{{
+
+    " ---- vim-colors-solarized: Solarized Colorscheme for Vim {{{
     Plug 'altercation/vim-colors-solarized'
     " }}}
-" 
-" ---- Auto Pairs: Insert or delete brackets, parens, quotes in pair. ----{{{
+
+    " ---- Auto Pairs: Insert or delete brackets, parens, quotes in pair {{{
     Plug 'jiangmiao/auto-pairs'
     " }}}
-"
-" ---- A nicer Python indentation style for vim. ----{{{
+
+    " ---- A nicer Python indentation style for vim {{{
     Plug 'Vimjas/vim-python-pep8-indent'
     " }}}
-"
-" ---- Gitgutter A Vim plugin which shows a git diff in the sign column. ----{{{
+
+    " ---- Gitgutter - A Vim plugin which shows a git diff in the sign column {{{
     Plug 'airblade/vim-gitgutter' 
     " }}}
-" ---  Markdown Preview for (Neo)vim  {{{ "
+
+    " ---- Markdown Preview for (Neo)vim {{{ 
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     " }}} "
-"
+
+
 " Initialize plugin system
 call plug#end()
 " }}}
