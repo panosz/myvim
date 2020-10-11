@@ -150,7 +150,7 @@ call plug#begin('~/.vim/plugged')
 
     " ---- Easymotion - Vim motion on speed! {{{ 
     Plug 'easymotion/vim-easymotion'
-    map <Leader><Leader>s <Plug>(easymotion-s)
+    " map <Leader><Leader>s <Plug>(easymotion-s)
     " }}} "
 
 
@@ -266,7 +266,7 @@ call plug#end()
     set smartcase           " unless you type a capital
     set hlsearch            " highlight matches
     " turn off search highlight
-    nnoremap <leader><space> :nohlsearch<CR>
+    nnoremap <leader>n :nohlsearch<CR>
 
 
 " Movement
