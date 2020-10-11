@@ -4,6 +4,10 @@
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
+    " ---- nerdtree file system explorer. {{{
+    Plug 'preservim/nerdtree'
+    " }}}
+
     " ---- vimtex {{{
     Plug 'lervag/vimtex'
     " }}}
@@ -136,8 +140,17 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter' 
     " }}}
 
+    " ---- Markdown syntax highlighting, matching rules and mappings. {{{ 
+    Plug 'plasticboy/vim-markdown'
+    " }}} "
+
     " ---- Markdown Preview for (Neo)vim {{{ 
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    " }}} "
+
+    " ---- Easymotion - Vim motion on speed! {{{ 
+    Plug 'easymotion/vim-easymotion'
+    map <Leader><Leader>s <Plug>(easymotion-s)
     " }}} "
 
 
