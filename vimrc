@@ -84,8 +84,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'vhdirk/vim-cmake'
     " }}}
 
-    " ---- fugitive.vim - A Git wrapper {{{
+    " ---- Git wrappers {{{
     Plug 'tpope/vim-fugitive'
+    Plug 'idanarye/vim-merginal'
     " }}}
 
     " ---- surround.vim: quoting/parenthesizing made simple {{{
