@@ -332,8 +332,8 @@ call plug#end()
     inoremap ξκ <esc>
   " }}}    
 
-    " split vertically existing buffer.
-    nnoremap <Leader>v :vert sb 
+    " populate command line with directive to switch to the bash buffer
+    nnoremap <Leader>v :vert sb \!/bin/bash
 
         
     " ycm GoTo
