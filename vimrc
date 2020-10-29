@@ -151,8 +151,8 @@ call plug#begin('~/.vim/plugged')
 
     " ---- Easymotion - Vim motion on speed! {{{ 
     Plug 'easymotion/vim-easymotion'
-    " map <Leader><Leader>s <Plug>(easymotion-s)
     " }}} "
+
 
 
 " Initialize plugin system
