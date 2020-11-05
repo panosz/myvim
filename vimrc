@@ -112,7 +112,7 @@ call plug#begin('~/.vim/plugged')
     " ---- vim-airline: Lean & mean status/tabline for vim {{{
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    let g:airline_theme='base16_ashes'
+    let g:airline_theme='gruvbox'
     " }}}
 
     " ---- Tagbar: a class outline viewer for vim {{{
@@ -125,9 +125,23 @@ call plug#begin('~/.vim/plugged')
     let g:rainbow_active = 1
     " }}}
 
-    " ---- vim-colors-solarized: Solarized Colorscheme for Vim {{{
-    Plug 'altercation/vim-colors-solarized'
-    " }}}
+" ---- Colorschemes {{{
+      " ---- tender: Colorscheme for Vim {{{
+      Plug 'jacoborus/tender.vim'
+      " }}}
+
+      " ---- purify: Colorscheme for Vim {{{
+      Plug 'kyoz/purify', { 'rtp': 'vim' }
+      " }}}
+
+      " ---- vim-colors-solarized: Solarized Colorscheme for Vim {{{
+      Plug 'altercation/vim-colors-solarized'
+      " }}}
+
+      " ---- gruvbox: Colorscheme for Vim {{{
+      Plug 'morhetz/gruvbox'
+      " }}}
+" }}}
 
     " ---- Auto Pairs: Insert or delete brackets, parens, quotes in pair {{{
     Plug 'jiangmiao/auto-pairs'
@@ -154,6 +168,15 @@ call plug#begin('~/.vim/plugged')
     " }}} "
 
 
+    " ---- Switch - Toggle booleans and more {{{ 
+    Plug 'AndrewRadev/switch.vim'
+    let g:switch_mapping = "-"
+    " }}} "
+
+    " ---- IncrementActivator - increment plugin{{{ 
+    Plug 'nishigori/increment-activator'
+    " }}} "
+
 
 " Initialize plugin system
 call plug#end()
@@ -163,7 +186,7 @@ call plug#end()
 
 "Colors
     set background=dark     " collorsceme
-    colorscheme solarized
+    colorscheme gruvbox
 
 
 " Spaces and Tabs
