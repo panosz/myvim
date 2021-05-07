@@ -37,6 +37,7 @@ call plug#begin('~/.vim/plugged')
     let g:ultisnips_python_style="numpy"
     " If you want :UltiSnipsEdit to split your window.
     let g:UltiSnipsEditSplit="vertical"
+    let g:UltiSnipsSnippetDirectories=["UltiSnips", "mycoolsnippets"]
     " }}}
 
     " ---- Buffer bye - delete buffers without closing windows {{{
@@ -120,7 +121,9 @@ call plug#begin('~/.vim/plugged')
     " }}}
 
     " ---- vim-rainbow: Rainbow Parentheses {{{
-    Plug 'frazrepo/vim-rainbow'
+        "  'frazrepo/vim-rainbow' had some conflicts with the spell checker for some files
+        "   so I had to replace it with the following
+    Plug 'luochen1990/rainbow' 
     " enable globally
     let g:rainbow_active = 1
     " }}}
@@ -177,12 +180,30 @@ call plug#begin('~/.vim/plugged')
     Plug 'nishigori/increment-activator'
     " }}} "
 
+    " ---- vim-virtualenv' - working with venvs{{{ 
+    Plug 'jmcantrell/vim-virtualenv'
+    " }}} "
+
+
+    " ---- vim-fontsize - adjust font size{{{ 
+    Plug 'drmikehenry/vim-fontsize'
+
+    " }}} "
+
+    " ---- Vim-Jinja2-Syntax  - support Jinja2 suntax{{{ 
+    Plug 'Glench/Vim-Jinja2-Syntax'
+
+    " }}} "
 
 " Initialize plugin system
 call plug#end()
 " }}}
 
     set nocompatible "use vim, not vi settings
+
+" Disable gui menu and toolbar
+    :set guioptions-=m
+    :set guioptions-=T
 
 "Colors
     set background=dark     " collorsceme
@@ -262,7 +283,16 @@ call plug#end()
     endif
     " }}}
 
-    " close buffer without closing window
+" Leader Shortcuts {{{
+    " local leader is comma
+     let mapleader="\<Space>"       
+     let maplocalleader = ","
+    " }}}
+    " jk is escape
+    inoremap jk <esc>
+
+
+" close buffer without closing window
     nnoremap <Leader>q :Bdelete<CR>
 
 
@@ -271,7 +301,6 @@ call plug#end()
     let g:netrw_winsize = 25
 
 " }}}
-
 
 " spelling {{{
     let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
@@ -301,13 +330,6 @@ call plug#end()
      " highlight last inserted text
      nnoremap gV `[v`]
 
-" Leader Shortcuts {{{
-    " local leader is comma
-     let mapleader="\<Space>"       
-     let maplocalleader = ","
-    " }}}
-    " jk is escape
-    inoremap jk <esc>
 
 "Mappings {{{
     nnoremap <Leader>w :w<CR>| " Save file
@@ -368,12 +390,20 @@ call plug#end()
 
     " Tagbar
     nnoremap <F8> :TagbarToggle<CR>
+
+    " Font size  {{{
+    nmap <silent> <Leader>=  <Plug>FontsizeBegin
+    nmap <silent> <Leader>+  <Plug>FontsizeInc
+    nmap <silent> <Leader>-  <Plug>FontsizeDec
+    nmap <silent> <Leader>0  <Plug>FontsizeDefault
+    " }}}
+
 " }}}
     " Latex {{{
 let g:tex_flavor = 'latex'
-let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
-let g:vimtex_view_general_options = '-r @line @pdf @tex'
-let g:vimtex_view_general_options_latexmk = '-r 1'
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+let g:vimtex_view_general_options_latexmk = '--unique'
 " let g:vimtex_view_method = skim
 " let g:vimtex_view_automatic = 1 " prevent `latexmk` (or other build tools) from starting Skim 
 let g:vimtex_complete_bib_simple = 1
@@ -386,3 +416,14 @@ autocmd FileType c,cpp,python autocmd BufWritePre <buffer> %s/\s\+$//e
 let g:syntastic_python_flake8_quiet_messages = {
     \ "!level":  "errors",
     \ "regex":   ['unexpected indentation (comment)', "set_trace' imported but unused"] }
+
+
+"Maximize Gui size
+if has("gui_running")
+  " GUI is running or is about to start.
+  " Maximize gvim window.
+  set lines=999 columns=999
+endif
+
+
+let g:netrw_browsex_viewer = "setsid xdg-open"
