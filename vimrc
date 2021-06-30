@@ -65,16 +65,20 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-unimpaired' 
     " }}}
 
-    " ---- vim-syntastic -  Martin Grenfell's syntax checker {{{
-    Plug 'vim-syntastic/syntastic'
-    " set statusline+=%#warningmsg#
-    " set statusline+=%{SyntasticStatuslineFlag()}
-    " set statusline+=%*
+    " " ---- vim-syntastic -  Martin Grenfell's syntax checker {{{
+    " Plug 'vim-syntastic/syntastic'
+    " " set statusline+=%#warningmsg#
+    " " set statusline+=%{SyntasticStatuslineFlag()}
+    " " set statusline+=%*
 
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 1
+    " let g:syntastic_always_populate_loc_list = 1
+    " let g:syntastic_auto_loc_list = 1
+    " let g:syntastic_check_on_open = 1
+    " let g:syntastic_check_on_wq = 1
+    " " }}}
+
+    " ---- Ale Asynchronous Lint Engine in place of syntastic {{{
+    Plug 'dense-analysis/ale'
     " }}}
 
     " ---- skywind3000/asyncrun.vim - run async shell commands in vim {{{
