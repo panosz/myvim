@@ -65,18 +65,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-unimpaired' 
     " }}}
 
-    " " ---- vim-syntastic -  Martin Grenfell's syntax checker {{{
-    " Plug 'vim-syntastic/syntastic'
-    " " set statusline+=%#warningmsg#
-    " " set statusline+=%{SyntasticStatuslineFlag()}
-    " " set statusline+=%*
-
-    " let g:syntastic_always_populate_loc_list = 1
-    " let g:syntastic_auto_loc_list = 1
-    " let g:syntastic_check_on_open = 1
-    " let g:syntastic_check_on_wq = 1
-    " " }}}
-
     " ---- Ale Asynchronous Lint Engine in place of syntastic {{{
     Plug 'dense-analysis/ale'
     " }}}
@@ -424,12 +412,6 @@ let g:vimtex_complete_bib_simple = 1
 " }}}
 " Remove trailing white space, when coding
 autocmd FileType c,cpp,python autocmd BufWritePre <buffer> %s/\s\+$//e
-
-
-" Filter Python flake8 messages
-let g:syntastic_python_flake8_quiet_messages = {
-    \ "!level":  "errors",
-    \ "regex":   ['unexpected indentation (comment)', "set_trace' imported but unused"] }
 
 
 "Maximize Gui size
