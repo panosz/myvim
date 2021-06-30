@@ -204,6 +204,11 @@ call plug#begin('~/.vim/plugged')
 
     " }}} "
 
+    " ---- vim-wiki {{{ 
+    Plug 'vimwiki/vimwiki'
+
+    " }}} "
+
 " Initialize plugin system
 call plug#end()
 " }}}
