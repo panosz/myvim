@@ -197,6 +197,11 @@ call plug#begin('~/.vim/plugged')
     " ---- Vim-Jinja2-Syntax  - support Jinja2 suntax{{{ 
     Plug 'Glench/Vim-Jinja2-Syntax'
 
+    " }}} /Vim-Jinja2-Syntax"
+
+    " ---- abolish  - Tim pope's plugin for working with variants of a word{{{ 
+    Plug 'tpope/vim-abolish'
+
     " }}} "
 
 " Initialize plugin system
