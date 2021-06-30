@@ -290,7 +290,8 @@ call plug#end()
      let mapleader="\<Space>"       
      let maplocalleader = ","
     " }}}
-    " jk is escape
+
+" jk is escape
     inoremap jk <esc>
 
 
@@ -315,21 +316,22 @@ call plug#end()
     map <leader>sp [s
 " }}}
 
-" Searching
+" Searching{{{
     set incsearch           " search as characters are entered
     set ignorecase          " ignore case when searching..           
     set smartcase           " unless you type a capital
     set hlsearch            " highlight matches
     " turn off search highlight
-    nnoremap <leader>n :nohlsearch<CR>
+    nnoremap <leader>n :nohlsearch<CR>"}}}
 
 
-" Movement
+" Movement{{{
     " move vertically by visual line
     nnoremap j gj
     nnoremap k gk
+    "}}}
     
-     " highlight last inserted text
+" highlight last inserted text
      nnoremap gV `[v`]
 
 
