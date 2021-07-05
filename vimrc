@@ -194,8 +194,15 @@ call plug#begin('~/.vim/plugged')
 
     " ---- vim-wiki {{{ 
     Plug 'vimwiki/vimwiki'
-
     " }}} "
+
+    " ---- callendar-vim {{{
+    Plug 'mattn/calendar-vim'
+    " }}}
+
+    " ---- task-wiki %integrate vim-wiki with taskwarrior {{{
+    Plug 'tools-life/taskwiki'
+    " }}}
 
 " Initialize plugin system
 call plug#end()
@@ -235,6 +242,7 @@ call plug#end()
     set ruler               " always show cursor position
 
     filetype indent on      " load filetype-specific indent files
+    filetype plugin on
     set shiftwidth=2        " when indenting with '>' use two spaces width
     syntax on
     set omnifunc=syntaxcomplete#Complete
@@ -412,6 +420,26 @@ let g:vimtex_view_general_options_latexmk = '--unique'
 " let g:vimtex_view_automatic = 1 " prevent `latexmk` (or other build tools) from starting Skim 
 let g:vimtex_complete_bib_simple = 1
 " }}}
+
+" Vim wiki {{{
+
+    let wiki = {}
+    let wiki.path = '~/vimwiki/'
+    let wiki.syntax = 'markdown'
+    let wiki.ext = '.md'
+
+    let wiki.diary_caption_level = 2
+    let wiki.auto_diary_index = 1
+    let wiki.auto_tags = 1
+
+    let g:vimwiki_list = [wiki]
+
+    " Append wiki file extension to links in Markdown. This is needed for
+    " compatibility with other Markdown tools.
+    let g:vimwiki_markdown_link_ext = 1
+
+"}}}
+
 " Remove trailing white space, when coding
 autocmd FileType c,cpp,python autocmd BufWritePre <buffer> %s/\s\+$//e
 
