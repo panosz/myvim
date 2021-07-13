@@ -223,29 +223,30 @@ call plug#end()
 
     set nocompatible "use vim, not vi settings
 
-" Disable gui menu and toolbar
-    :set guioptions-=m
-    :set guioptions-=T
-
-"Colors
+"Colors{{{
     set background=dark     " collorsceme
     colorscheme gruvbox
+"}}}
 
+" Spaces and Tabs{{{
+    set tabstop=4      " number of visual spaces per TAB
+    set softtabstop=4  " number of spaces in tab when editing
+    set expandtab      " tabs are spaces
+    filetype indent on " load filetype-specific indent files
+    filetype plugin on
+    set shiftwidth=2   " when indenting with '>' use two spaces width
 
-" Spaces and Tabs
-    set tabstop=4       " number of visual spaces per TAB
-    set softtabstop=4   " number of spaces in tab when editing
-    set expandtab       " tabs are spaces
+    " Remove trailing white space, when coding
+    autocmd FileType c,cpp,python autocmd BufWritePre <buffer> %s/\s\+$//e
 
+"}}}
 
-" Swap and Backup files 
+" Swap and Backup files {{{
     set directory=$HOME/.vim/swp//  " keep swap files in .vim/swp appending the file absolute directory    
     set nobackup            " disable backup
+"}}}
 
-" Update time
-    set updatetime=100      " Wait time in ms for various operations. Also used by gitgutter.
-
-" UI Config
+" UI {{{
     set number              " show line numbers
     set relativenumber      " show absolute number only on cursor line 
     set showcmd             " show command in bottom bar
@@ -254,9 +255,8 @@ call plug#end()
 
     set ruler               " always show cursor position
 
-    filetype indent on      " load filetype-specific indent files
-    filetype plugin on
-    set shiftwidth=2        " when indenting with '>' use two spaces width
+    set updatetime=100      " Wait time in ms for various operations. Also used by gitgutter.
+
     syntax on
     set omnifunc=syntaxcomplete#Complete
 
@@ -293,7 +293,24 @@ call plug#end()
 	
     endif
 
+    set tags=tags; " look for tags recursively in parent directories, (due to ';')
+
 	set foldmethod=marker   " Use markers for folding
+
+    " Disable gui menu and toolbar{{{
+        set guioptions-=m
+        set guioptions-=T
+    "}}}
+    "Maximize Gui size{{{
+      if has("gui_running")
+        " GUI is running or is about to start.
+        " Maximize gvim window.
+        set lines=999 columns=999
+      endif
+    "}}}
+
+"}}}
+
     " No annoying sound on errors{{{
     set noerrorbells
     set novisualbell
@@ -306,62 +323,53 @@ call plug#end()
     endif
     " }}}
 
-" Leader Shortcuts {{{
-    " local leader is comma
+" Leader {{{
      let mapleader="\<Space>"       
      let maplocalleader = ","
     " }}}
 
-" jk is escape
-    inoremap jk <esc>
-
-
-" close buffer without closing window
-    nnoremap <Leader>q :Bdelete<CR>
-
-
-" netrw {{{
+" Netrw {{{
     let g:netrw_browse_split = 4
     let g:netrw_winsize = 25
 
 " }}}
 
-" spelling {{{
+" Spelling {{{
     let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
     set spell
     set spelllang=en
     set spelllang+=el
-
-    " Shortcuts using <leader>
-    map <leader>sn ]s
-    map <leader>sp [s
-" }}}
+  " }}}
 
 " Searching{{{
     set incsearch           " search as characters are entered
     set ignorecase          " ignore case when searching..           
     set smartcase           " unless you type a capital
     set hlsearch            " highlight matches
-    " turn off search highlight
-    nnoremap <leader>n :nohlsearch<CR>"}}}
+    "}}}
 
-"make :grep use ack {{{
+" Make :grep use ack {{{
     set grepprg=ack\ --nogroup\ --column\ $*
     set grepformat=%f:%l:%c:%m
 "}}}
 
-" Movement{{{
-    " move vertically by visual line
-    nnoremap j gj
-    nnoremap k gk
-    "}}}
-    
-" highlight last inserted text
-     nnoremap gV `[v`]
-
-
 "Mappings {{{
+
+
+    " jk is escape
+    inoremap jk <esc>
+
+  " Movement{{{
+      " move vertically by visual line
+      nnoremap j gj
+      nnoremap k gk
+      "}}}
+
+    " close buffer without closing window
+    nnoremap <Leader>q :Bdelete<CR>
+
     nnoremap <Leader>w :w<CR>| " Save file
+
     nnoremap <Leader>{ o{<esc>o}<esc>O| " Insert c style curly bracket block
 
     "copy and paste {{{
@@ -386,9 +394,18 @@ call plug#end()
     tnoremap <C-L> <C-W><C-L>
     " }}}
 
-    " buffer navigation {{{
-    nnoremap <Leader>bn :bn<CR>| " go to next buffer
-    nnoremap <Leader>bp :bp<CR>| " go to previous buffer
+    " navigation {{{
+
+        " buffers{{{
+            nnoremap <Leader>bn :bn<CR>| " go to next buffer
+            nnoremap <Leader>bp :bp<CR>| " go to previous buffer
+        "}}}
+
+        " spelling {{{
+          map <leader>sn ]s
+          map <leader>sp [s
+        "}}}
+
     " }}}
 
     " search and replace under cursor
@@ -397,9 +414,11 @@ call plug#end()
     " open terminal in vertical split
     nnoremap <Leader>t :vert term<CR>
 
-    " tags
-    set tags=tags; " look for tags recursively in parent directories, (due to ';')
+    " highlight last inserted text
+    nnoremap gV `[v`]
 
+    " turn off search highlight
+    nnoremap <leader>n :nohlsearch<CR>
 
     " make it easy to use vim when typing greek {{{ 
     set langmap=ΑA,ΒB,ΨC,ΔD,ΕE,ΦF,ΓG,ΗH,ΙI,ΞJ,ΚK,ΛL,ΜM,ΝN,ΟO,ΠP,QQ,ΡR,ΣS,ΤT,ΘU,ΩV,WW,ΧX,ΥY,ΖZ,αa,βb,ψc,δd,εe,φf,γg,ηh,ιi,ξj,κk,λl,μm,νn,οo,πp,qq,ρr,σs,τt,θu,ωv,ςw,χx,υy,ζz
@@ -409,17 +428,18 @@ call plug#end()
     " populate command line with directive to switch to the bash buffer
     nnoremap <Leader>v :vert sb \!/bin/bash
 
-        
-    " ycm GoTo
-    nnoremap gd :YcmCompleter GoTo<CR>
+    " easy to call pluggins {{{
+
+        " ycm GoTo
+        nnoremap gd :YcmCompleter GoTo<CR>
 
 
-    " GtrlP
-    nnoremap <Leader>. :CtrlPTag<CR>
+        " GtrlP
+        nnoremap <Leader>. :CtrlPTag<CR>
 
-    " Tagbar
-    nnoremap <F8> :TagbarToggle<CR>
-
+        " Tagbar
+        nnoremap <F8> :TagbarToggle<CR>
+    "}}}
     " Font size  {{{
     nmap <silent> <Leader>=  <Plug>FontsizeBegin
     nmap <silent> <Leader>+  <Plug>FontsizeInc
@@ -428,7 +448,8 @@ call plug#end()
     " }}}
 
 " }}}
-    " Latex {{{
+
+" Latex {{{
 let g:tex_flavor = 'latex'
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
@@ -457,16 +478,6 @@ let g:vimtex_complete_bib_simple = 1
 
 "}}}
 
-" Remove trailing white space, when coding
-autocmd FileType c,cpp,python autocmd BufWritePre <buffer> %s/\s\+$//e
-
-
-"Maximize Gui size
-if has("gui_running")
-  " GUI is running or is about to start.
-  " Maximize gvim window.
-  set lines=999 columns=999
-endif
-
-
 let g:netrw_browsex_viewer = "setsid xdg-open"
+
+" vim:foldmethod=marker:foldlevel=0
