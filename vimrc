@@ -433,7 +433,7 @@ let g:vimtex_complete_bib_simple = 1
     let wiki = {}
     let wiki.path = '~/vimwiki/'
     let wiki.syntax = 'markdown'
-    let wiki.ext = '.md'
+    let wiki.ext = '.wiki'
 
     let wiki.diary_caption_level = 2
     let wiki.auto_diary_index = 1
