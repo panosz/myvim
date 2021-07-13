@@ -339,6 +339,10 @@ call plug#end()
     " turn off search highlight
     nnoremap <leader>n :nohlsearch<CR>"}}}
 
+"make :grep use ack {{{
+    set grepprg=ack\ --nogroup\ --column\ $*
+    set grepformat=%f:%l:%c:%m
+"}}}
 
 " Movement{{{
     " move vertically by visual line
