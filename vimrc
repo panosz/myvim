@@ -204,6 +204,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'tools-life/taskwiki'
     " }}}
 
+    " ---- AnsiEsc %color text with Ansi escape sequences {{{
+    Plug 'powerman/vim-plugin-AnsiEsc'
+    " }}}
+ 
+    " ---- vim-taskwarrior %a vim interface for taskwarrior {{{
+    Plug 'farseer90718/vim-taskwarrior'
+    " }}}
 " Initialize plugin system
 call plug#end()
 " }}}
