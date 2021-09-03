@@ -297,6 +297,7 @@ call plug#end()
 
 	set foldmethod=marker   " Use markers for folding
 
+
     " Disable gui menu and toolbar{{{
         set guioptions-=m
         set guioptions-=T
@@ -352,6 +353,13 @@ call plug#end()
     set grepprg=ack\ --nogroup\ --column\ $*
     set grepformat=%f:%l:%c:%m
 "}}}
+
+    " make it easy to use vim when typing greek {{{ 
+    "
+    set keymap=greek_utf-8
+    set iminsert=0
+    set imsearch=-1
+  " }}}    
 
 "Mappings {{{
 
@@ -420,10 +428,6 @@ call plug#end()
     " turn off search highlight
     nnoremap <leader>n :nohlsearch<CR>
 
-    " make it easy to use vim when typing greek {{{ 
-    set langmap=ΑA,ΒB,ΨC,ΔD,ΕE,ΦF,ΓG,ΗH,ΙI,ΞJ,ΚK,ΛL,ΜM,ΝN,ΟO,ΠP,QQ,ΡR,ΣS,ΤT,ΘU,ΩV,WW,ΧX,ΥY,ΖZ,αa,βb,ψc,δd,εe,φf,γg,ηh,ιi,ξj,κk,λl,μm,νn,οo,πp,qq,ρr,σs,τt,θu,ωv,ςw,χx,υy,ζz
-    inoremap ξκ <esc>
-  " }}}    
 
     " populate command line with directive to switch to the bash buffer
     nnoremap <Leader>v :vert sb \!/bin/bash
